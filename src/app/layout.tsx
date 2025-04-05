@@ -1,20 +1,59 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/custom/Footer";
+import Header from "@/components/custom/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Arcade Paradise",
-  description: "Relive the Glory Days of Gaming",
+  description: "Relive the Glory Days of Gaming with our retro arcade collection.",
+  keywords: [
+    "arcade games",
+    "retro gaming",
+    "classic video games",
+    "Arcade Paradise",
+    "online arcade",
+    "nostalgia games",
+  ],
+  authors: [{ name: "Kush Sharma", url: "https://kush-sharma.vercel.app" }],
+  metadataBase: new URL("https://retro-arcade-game-parlour.vercel.app"), 
+  openGraph: {
+    title: "Arcade Paradise",
+    description: "Relive the Glory Days of Gaming with our retro arcade collection.",
+    url: "https://yourwebsite.com",
+    siteName: "Arcade Paradise",
+    images: [
+      {
+        url: "https://retro-arcade-game-parlour.vercel.app/arcade-image.gif",
+        width: 1200,
+        height: 630,
+        alt: "Arcade Paradise Banner",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arcade Paradise",
+    description: "Relive the Glory Days of Gaming with our retro arcade collection.",
+    creator: "@KushSha06747704",
+    images: ["https://retro-arcade-game-parlour.vercel.app/arcade-image.gif"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({
@@ -23,23 +62,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
-
+        <Header />
+  
         <div className="fixed inset-0 z-0 grid grid-cols-8 grid-rows-8 gap-4 opacity-10 pointer-events-none">
           {Array.from({ length: 64 }).map((_, idx) => (
-            <div key={idx} className="bg-white/5 border border-gray-800" />
+            <div key={idx} className="bg-white/5 border border-gray-950" />
           ))}
         </div>
 
         <div className="fixed top-10 left-10 z-0 w-32 h-32 bg-red-500 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
         <div className="fixed bottom-10 right-10 z-0 w-40 h-40 bg-blue-500 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
 
-        <div className="relative z-10 w-full">
+        <main className="relative z-10 w-full">
           {children}
-        </div>
+        </main>
+        <Footer />
       </body>
     </html>
   );
