@@ -69,7 +69,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-white`}
       >
         <Header />
 
@@ -83,10 +83,10 @@ export default function RootLayout({
           <Image
             src="/prop-1.png"
             alt="Prop 1"
-            width={128}
-            height={128}
+            width={200}
+            height={200}
             priority
-            className="w-full h-auto"
+            className="w-full h-auto mt-20"
           />
         </div>
 
@@ -94,16 +94,16 @@ export default function RootLayout({
           <Image
             src="/prop-2.png"
             alt="Prop 2"
-            width={128}
-            height={128}
+            width={200}
+            height={200}
             priority
-            className="w-full h-auto"
+            className="w-full h-auto mt-20"
           />
         </div>
 
         <div className="hidden sm:block fixed top-10 left-10 z-0 w-28 h-28 bg-red-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
         <div className="hidden sm:block fixed bottom-10 right-10 z-0 w-28 h-28 bg-blue-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
-        <div className="hidden sm:block fixed top-10 right-10 z-0 w-28 h-28 bg-green-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
+        <div className="hidden sm:block fixed top-10 right-10 z-0 w-28 h-28 bg-pink-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
         <div className="hidden sm:block fixed bottom-10 left-10 z-0 w-28 h-28 bg-yellow-400 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
 
         <main className="relative z-10 w-full">
