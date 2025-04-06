@@ -44,6 +44,7 @@ export default function HomeClient() {
   }, [konamiCodePosition]);
 
   const games = [
+    { name: "Tekken 3", route: "/tekken-3", color: "bg-indigo-400" },
     { name: "Pac-Man", route: "/pac-man", color: "bg-yellow-400" },
     { name: "Tetris", route: "/tetris", color: "bg-pink-500" },
     { name: "Donkey Kong", route: "/donkey-kong", color: "bg-green-600" },
@@ -54,15 +55,14 @@ export default function HomeClient() {
     { name: "Centipede", route: "/centipede", color: "bg-green-700" },
     { name: "Breakout", route: "/breakout", color: "bg-red-500" },
     { name: "Pong", route: "/pong", color: "bg-white text-black" },
-    { name: "Ms. Pac-Man", route: "/ms-pac-man", color: "bg-pink-400" },
     { name: "Street Fighter II", route: "/street-fighter", color: "bg-blue-700" },
   ];
 
   return (
     <main className="min-h-screen text-white overflow-x-hidden px-4 sm:px-20 py-10 flex flex-col items-center gap-12">
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div className="flex flex-col justify-center space-y-4">
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
+        <div className="flex flex-col justify-center space-y-4 ml-0 lg:ml-30">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-transparent bg-clip-text">
             Retro Gaming, Reinvented
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-gray-400 font-medium">
@@ -71,7 +71,7 @@ export default function HomeClient() {
         </div>
 
         <div
-          className="relative aspect-video w-full h-auto rounded-lg shadow-lg overflow-hidden"
+          className="relative aspect-square w-full h-auto rounded-lg shadow-lg overflow-hidden"
           onMouseEnter={() => audioRef.current?.play()}
           onMouseLeave={() => {
             if (audioRef.current) {
