@@ -2,8 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRef } from "react";
 
 export default function About() {
+
+  const laserAudioRef = useRef<HTMLAudioElement>(null);
+
+  const handleMouseEnter = () => {
+    laserAudioRef.current?.play();
+  };
+
+  const handleMouseLeave = () => {
+    laserAudioRef.current?.pause();
+    laserAudioRef.current!.currentTime = 0;
+  };
+
   return (
     <main className="min-h-screen text-white overflow-x-hidden px-4 sm:px-20 py-20 flex flex-col items-center gap-12">
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -22,16 +35,20 @@ export default function About() {
           </Link>
         </div>
 
-        <div className="relative aspect-square w-full h-auto rounded-lg shadow-lg overflow-hidden">
-          <Image
-            src="/about-retro-gaming.gif"
-            alt="About Retro Gaming"
-            fill
-            className="object-contain"
-            priority
-            unoptimized
-          />
-        </div>
+        <div className="relative aspect-square w-full h-auto rounded-lg shadow-lg overflow-hidden"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <Image
+          src="/prop-4.gif"
+          alt="About Retro Gaming"
+          fill
+          className="object-contain"
+          priority
+          unoptimized
+        />
+        <audio ref={laserAudioRef} src="/laser.mp3" preload="auto" />
+      </div>
       </div>
 
       <div className="w-full max-w-7xl mx-auto text-center">

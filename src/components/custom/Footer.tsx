@@ -14,7 +14,7 @@ export default function Footer() {
           <h3 className="text-3xl font-bold uppercase tracking-wider mb-2 text-[#FFD700]">
             Arcade Paradise
           </h3>
-          <p className="text-gray-400 text-sm italic">
+          <p className="text-gray-400 text-base italic">
             Where Pixels Meet Nostalgia 🕹️
           </p>
         </div>

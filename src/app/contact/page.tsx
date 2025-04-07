@@ -1,8 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Contact() {
+  return (
+    <main className="min-h-screen text-white overflow-x-hidden mt-10 px-4 sm:px-20 py-10 flex flex-col items-center gap-12">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <ContactInfoSection />
+        <ContactForm />
+      </div>
+    </main>
+  );
+}
+
+function ContactInfoSection() {
+  return (
+    <div className="flex flex-col justify-center space-y-6">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
+        Get in Touch
+      </h1>
+      <p className="text-lg sm:text-xl text-gray-400 font-medium">
+        Have questions, feedback, or just want to say hello? Fill out the form, and we’ll get back to you as soon as possible.
+      </p>
+      <div className="flex flex-col gap-4">
+        <ContactInfo icon="mail" text="contact@arcadeparadise.com" />
+        <ContactInfo icon="location" text="123 Arcade Street, Gaming City" />
+      </div>
+      <ContactImage />
+    </div>
+  );
+}
+
+function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,7 +45,7 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setError(null); 
+    setError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -34,9 +64,7 @@ export default function Contact() {
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
@@ -63,70 +91,51 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen text-white overflow-x-hidden mt-10 px-4 sm:px-20 py-10 flex flex-col items-center gap-12">
-      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-    
-        <div className="flex flex-col justify-center space-y-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
-            Get in Touch
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-400 font-medium">
-            Have questions, feedback, or just want to say hello? Fill out the form, and we’ll get back to you as soon as possible.
-          </p>
-          <div className="flex flex-col gap-4">
-            <ContactInfo icon="mail" text="contact@arcadeparadise.com" />
-            <ContactInfo icon="location" text="123 Arcade Street, Gaming City" />
-          </div>
-        </div>
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-6 max-h-120 p-6 border-4 border-white shadow-[8px_8px_0_rgba(255,255,255,1)] bg-gray-900 rounded-lg"
+    >
+      <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-wider bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
+        Send Us a Message
+      </h2>
 
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-6 p-6 border-4 border-white shadow-[8px_8px_0_rgba(255,255,255,1)] bg-gray-900 rounded-lg"
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-wider bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
-            Send Us a Message
-          </h2>
+      {error && <p className="text-red-500 text-sm">{error}</p>}
 
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+      <InputField
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+      />
+      <InputField
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        value={formData.message}
+        onChange={handleChange}
+        rows={5}
+        required
+        className="px-4 py-3 border-2 border-black bg-black text-white placeholder-gray-500 rounded-lg focus:border-red-500 transition-colors duration-200 resize-none"
+      ></textarea>
 
-          <InputField
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <InputField
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={5}
-            required
-            className="px-4 py-3 border-2 border-black bg-black text-white placeholder-gray-500 rounded-lg focus:border-red-500 transition-colors duration-200 resize-none"
-          ></textarea>
-
-          <button
-            type="submit"
-            disabled={isSubmitted}
-            className={`px-6 py-3 text-lg font-bold uppercase bg-white text-black border-4 border-black shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-transform duration-200 ${
-              isSubmitted ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-          >
-            {isSubmitted ? "Message Sent!" : "Send Message"}
-          </button>
-        </form>
-      </div>
-    </main>
+      <button
+        type="submit"
+        disabled={isSubmitted}
+        className={`px-6 py-3 text-lg font-bold uppercase bg-white text-black border-4 border-black shadow-[8px_8px_0_rgba(0,0,0,1)] hover:shadow-[12px_12px_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-transform duration-200 ${isSubmitted ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+      >
+        {isSubmitted ? "Message Sent!" : "Send Message"}
+      </button>
+    </form>
   );
 }
 
@@ -205,5 +214,18 @@ const ContactInfo = ({ icon, text }: { icon: "mail" | "location"; text: string }
       {iconMap[icon]}
       <span className="text-gray-400">{text}</span>
     </div>
+  );
+};
+
+const ContactImage = () => {
+  return (
+      <Image
+        src="/prop-5.gif"
+        alt="Retro arcade joystick"
+        width={500}
+        height={500}
+        className="object-contain rounded-lg"
+        priority
+      />
   );
 };
