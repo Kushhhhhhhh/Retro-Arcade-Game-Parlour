@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/custom/Footer";
 import Header from "@/components/custom/Header";
@@ -79,32 +79,10 @@ export default function RootLayout({
           ))}
         </div>
 
-        <div className="hidden md:block fixed top-0 left-0 z-0 w-32 h-auto pointer-events-none">
-          <Image
-            src="/prop-1.png"
-            alt="Prop 1"
-            width={200}
-            height={200}
-            priority
-            className="w-full h-auto mt-20"
-          />
-        </div>
-
-        <div className="hidden md:block fixed top-0 right-0 z-0 w-32 h-auto pointer-events-none">
-          <Image
-            src="/prop-2.png"
-            alt="Prop 2"
-            width={200}
-            height={200}
-            priority
-            className="w-full h-auto mt-20"
-          />
-        </div>
-
-        <div className="hidden sm:block fixed top-10 left-10 z-0 w-28 h-28 bg-red-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
-        <div className="hidden sm:block fixed bottom-10 right-10 z-0 w-28 h-28 bg-blue-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
-        <div className="hidden sm:block fixed top-10 right-10 z-0 w-28 h-28 bg-pink-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
-        <div className="hidden sm:block fixed bottom-10 left-10 z-0 w-28 h-28 bg-yellow-400 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
+        <div className="hidden sm:block fixed top-0 left-0 z-0 w-28 h-28 bg-red-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
+        <div className="hidden sm:block fixed bottom-0 right-0 z-0 w-28 h-28 bg-blue-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
+        <div className="hidden sm:block fixed top-0 right-0 z-0 w-28 h-28 bg-pink-700 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
+        <div className="hidden sm:block fixed bottom-0 left-0 z-0 w-28 h-28 bg-yellow-400 rounded-full opacity-20 blur-3xl animate-pulse pointer-events-none" />
 
         <main className="relative z-10 w-full">
           {children}
