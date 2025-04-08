@@ -160,13 +160,13 @@ export default function HomeClient() {
             }}
           >
             <Image
-              src="/arcade-machine.gif"
-              alt="Arcade Machine"
-              fill
-              className="object-contain z-[1] relative"
-              priority
-              unoptimized
-            />
+  src="/arcade-machine.gif"
+  alt="Arcade Machine"
+  fill
+  className="object-cover z-[1] relative"
+  priority
+  unoptimized
+/>
          
             <div className={`absolute inset-0 bg-[#00FFFF]/10 mix-blend-color pointer-events-none z-[2] ${
               glitchActive ? 'opacity-20' : 'opacity-0'
@@ -257,7 +257,6 @@ export default function HomeClient() {
         </div>
       )}
       
-      {/* Animated Pixel Corners */}
       <div className="fixed top-0 left-0 w-0 h-0 border-t-[30px] border-l-[30px] border-t-[#FFFF00] border-l-[#FFFF00] z-[60]"></div>
       <div className="fixed top-0 right-0 w-0 h-0 border-t-[30px] border-r-[30px] border-t-[#FF00FF] border-r-[#FF00FF] z-[60]"></div>
       <div className="fixed bottom-0 left-0 w-0 h-0 border-b-[30px] border-l-[30px] border-b-[#00FFFF] border-l-[#00FFFF] z-[60]"></div>
