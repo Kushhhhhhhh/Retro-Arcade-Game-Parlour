@@ -60,7 +60,7 @@ export default function HomeClient() {
 
   const games = [
     { name: "Tekken 3", route: "/tekken-3", color: "bg-[#7B68EE]" },
-    { name: "Pac-Man", route: "/pac-man", color: "bg-[#FFFF00]" },
+    { name: "Pac-Man", route: "/pac-man", color: "bg-[#FFFF00] text-[#120F1E]" },
     { name: "Tetris", route: "/tetris", color: "bg-[#FF00FF]" },
     { name: "Donkey Kong", route: "/donkey-kong", color: "bg-[#00FF7F]" },
     { name: "Galaga", route: "/galaga", color: "bg-[#00FFFF]" },
@@ -84,7 +84,7 @@ export default function HomeClient() {
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mt-6">
         <div className="flex flex-col justify-center space-y-8 ml-0 lg:ml-6 relative">
           
-          <div className="absolute -left-4 -top-4 w-20 h-20 bg-[#FF00FF] z-[-1]"></div>
+          <div className="absolute -left-4 top-0 w-20 h-20 bg-[#FF00FF] z-[-1]"></div>
           
           <h1 className={`font-press-start text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-wider 
                        ${glitchActive ? 'text-[#00FFFF] skew-x-2' : ''} relative`}>

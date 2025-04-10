@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useRef } from "react";
 
 export default function About() {
-
   const laserAudioRef = useRef<HTMLAudioElement>(null);
 
   const handleMouseEnter = () => {
@@ -19,9 +18,13 @@ export default function About() {
 
   return (
     <main className="min-h-screen text-white overflow-x-hidden px-4 sm:px-20 py-20 flex flex-col items-center gap-12">
-      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {/* Decorative Shape */}
+      <div className="absolute top-0 left-0 w-32 h-32 bg-red-600 transform -rotate-45 -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-purple-700 transform rotate-45 translate-x-1/2 translate-y-1/2"></div>
+
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
         <div className="flex flex-col justify-center space-y-6">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
             About Arcade Paradise
           </h1>
           <p className="text-lg sm:text-xl text-gray-400 font-medium">
@@ -36,26 +39,27 @@ export default function About() {
         </div>
 
         <div className="relative aspect-square w-full h-auto rounded-lg shadow-lg overflow-hidden"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <Image
-          src="/prop-4.gif"
-          alt="About Retro Gaming"
-          fill
-          className="object-contain"
-          priority
-          unoptimized
-        />
-        <audio ref={laserAudioRef} src="/laser.mp3" preload="auto" />
-      </div>
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Image
+            src="/prop-4.gif"
+            alt="About Retro Gaming"
+            fill
+            className="object-contain"
+            priority
+            unoptimized
+          />
+          <audio ref={laserAudioRef} src="/laser.mp3" preload="auto" />
+        </div>
       </div>
 
-      <div className="w-full max-w-7xl mx-auto text-center">
+      <div className="w-full max-w-7xl mx-auto text-center relative z-10">
         <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-wider mb-8 bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
           Meet the Team
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
           <div className="flex flex-col items-center gap-4 p-6 border-4 border-black shadow-[8px_8px_0_rgba(255,255,255,1)] hover:shadow-[12px_12px_0_rgba(255,255,255,1)] hover:-translate-x-1 hover:-translate-y-1 transition-transform duration-200 hover:bg-indigo-500 rounded-lg">
             <Image
               src="/kush-1.jpeg"
@@ -93,6 +97,7 @@ export default function About() {
           </div>
         </div>
       </div>
+
     </main>
   );
 }
