@@ -18,9 +18,6 @@ export default function About() {
 
   return (
     <main className="min-h-screen text-white overflow-x-hidden px-4 sm:px-20 py-20 flex flex-col items-center gap-12">
-      {/* Decorative Shape */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-red-600 transform -rotate-45 -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-purple-700 transform rotate-45 translate-x-1/2 translate-y-1/2"></div>
 
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
         <div className="flex flex-col justify-center space-y-6">
