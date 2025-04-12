@@ -226,6 +226,7 @@ const ContactImage = () => {
         height={500}
         className="object-contain rounded-lg"
         priority
+        unoptimized
       />
   );
 };

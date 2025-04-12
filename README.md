@@ -16,7 +16,7 @@ Play your favorite games anytime, anywhere, directly from your browser. No downl
 A bold, vibrant, and minimalist design that captures the essence of retro gaming while embracing modern aesthetics.
 
 🎁 **Konami Code Easter Egg**  
-Unlock a secret bonus game by entering the legendary Konami Code (`ArrowUp, ArrowDown, ArrowLeft, ArrowRight, k, u, s, h`)!
+Unlock a secret bonus game by entering the legendary Konami Code (`ArrowUp, ArrowUp, ArrowDown, ArrowDown, ArrowLeft, ArrowRight, ArrowLeft, ArrowRight, b, a`)!
 
 🎧 **Immersive Audio Experience**  
 Enjoy authentic arcade sounds as you navigate through the app.

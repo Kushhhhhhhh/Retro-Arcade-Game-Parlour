@@ -39,3 +39,9 @@ html {
   background-size: 300% 300%;
   animation: gradient-shift 4s ease infinite;
 }
+
+@layer base {
+  html.dark {
+    color-scheme: dark;
+  }
+}

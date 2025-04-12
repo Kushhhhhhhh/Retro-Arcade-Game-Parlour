@@ -59,18 +59,9 @@ export default function HomeClient() {
   }, [konamiCodePosition]);
 
   const games = [
-    { name: "Tekken 3", route: "/tekken-3", color: "bg-[#7B68EE]" },
-    { name: "Pac-Man", route: "/pac-man", color: "bg-[#FFFF00] text-[#120F1E]" },
-    { name: "Tetris", route: "/tetris", color: "bg-[#FF00FF]" },
-    { name: "Donkey Kong", route: "/donkey-kong", color: "bg-[#00FF7F]" },
-    { name: "Galaga", route: "/galaga", color: "bg-[#00FFFF]" },
-    { name: "Frogger", route: "/frogger", color: "bg-[#FF8C00]" },
-    { name: "Sonic", route: "/sonic", color: "bg-[#4EEAFF]" },
-    { name: "Asteroids", route: "/asteroids", color: "bg-[#808080]" },
-    { name: "Centipede", route: "/centipede", color: "bg-[#32CD32]" },
-    { name: "Breakout", route: "/breakout", color: "bg-[#FF4500]" },
-    { name: "Pong", route: "/pong", color: "bg-[#FFFFFF] text-[#120F1E]" },
-    { name: "Street Fighter", route: "/street-fighter", color: "bg-[#0000CD]" },
+    { name: "Tekken 3", route: "/tekken-3", color: "bg-purple-700 text-gray-200" },
+    { name: "Road Rash", route: "/road-rash", color: "bg-yellow-500 text-gray-200" },
+    { name: "2Xtreme", route: "/2xtreme", color: "bg-red-500 text-gray-200" },
   ];
 
   return (
