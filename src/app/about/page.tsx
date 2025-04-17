@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
+import { pressStart } from '@/app/fonts';
 
 export default function About() {
   const laserAudioRef = useRef<HTMLAudioElement>(null);
@@ -21,8 +22,8 @@ export default function About() {
 
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
         <div className="flex flex-col justify-center space-y-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
-            About Arcade Paradise
+          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold ${pressStart.className} bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent`}>
+            About Us
           </h1>
           <p className="text-lg sm:text-xl text-gray-400 font-medium">
             Arcade Paradise is your gateway to the golden age of gaming. We bring the nostalgia of retro arcade games into the modern era with a cloud-based platform that lets you play anytime, anywhere.
@@ -52,7 +53,7 @@ export default function About() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto text-center relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-wider mb-8 bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
+        <h2 className={`text-3xl sm:text-4xl font-bold ${pressStart.className} uppercase tracking-wider mb-8 bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent`}>
           Meet the Team
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

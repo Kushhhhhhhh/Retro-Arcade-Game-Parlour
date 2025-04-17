@@ -5,10 +5,11 @@ import {
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa";
+import { pressStart } from '@/app/fonts';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#131313] text-white py-12 px-6 sm:px-20 mt-16 border-t-[6px] border-[#ffe8ff] relative">
+    <footer className={`w-full bg-[#131313] text-white ${pressStart.className} py-12 px-6 sm:px-20 mt-16 border-t-[6px] border-[#ffe8ff] relative`}>
       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-20 h-2 bg-gradient-to-r from-[#FF00FF] to-[#00FFFF] blur-md"></div>
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-7xl mx-auto">
         <div className="text-center md:text-left">

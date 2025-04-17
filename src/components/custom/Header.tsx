@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { pressStart } from '@/app/fonts';
 import { FaBars, FaTimes, FaGamepad } from "react-icons/fa";
 
 export default function Header() {
@@ -24,7 +25,7 @@ export default function Header() {
       <div className="relative flex justify-between items-center max-w-7xl mx-auto z-[2]">
         <Link
           href="/"
-          className={`group flex items-center justify-center text-3xl sm:text-4xl font-bold uppercase tracking-widest transform transition-all ease-in-out ${glitchActive ? 'skew-x-3 text-[#0FF] scale-105' : ''
+          className={`group flex items-center justify-center text-3xl sm:text-4xl font-bold uppercase tracking-widest transform transition-all ease-in-out ${pressStart.className} ${glitchActive ? 'skew-x-3 text-[#0FF] scale-105' : ''
             } relative`}
         >
           <span className="mr-2 flex items-center justify-center transform hover:rotate-12 transition-transform">

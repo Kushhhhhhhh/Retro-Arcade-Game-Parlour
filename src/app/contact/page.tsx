@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import { pressStart } from '@/app/fonts';
 
 export default function Contact() {
   return (
@@ -17,13 +18,13 @@ export default function Contact() {
 function ContactInfoSection() {
   return (
     <div className="flex flex-col justify-center space-y-6">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
+      <h1 className={`text-3xl sm:text-4xl md:text-5xl ${pressStart.className} font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent`}>
         Get in Touch
       </h1>
       <p className="text-lg sm:text-xl text-gray-400 font-medium">
         Have questions, feedback, or just want to say hello? Fill out the form, and we’ll get back to you as soon as possible.
       </p>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 mt-4">
         <ContactInfo icon="mail" text="contact@arcadeparadise.com" />
         <ContactInfo icon="location" text="123 Arcade Street, Gaming City" />
       </div>
@@ -93,9 +94,9 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-6 max-h-120 p-6 border-4 border-white shadow-[8px_8px_0_rgba(255,255,255,1)] bg-gray-900 rounded-lg"
+      className="flex flex-col gap-6 max-h-120 p-6 border-4 border-white shadow-[8px_8px_0_rgba(255,255,255,1)] bg-gray-900"
     >
-      <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-wider bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent">
+      <h2 className={`text-2xl sm:text-3xl font-bold ${pressStart.className} uppercase tracking-wider bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent`}>
         Send Us a Message
       </h2>
 
@@ -124,7 +125,7 @@ function ContactForm() {
         onChange={handleChange}
         rows={5}
         required
-        className="px-4 py-3 border-2 border-black bg-black text-white placeholder-gray-500 rounded-lg focus:border-red-500 transition-colors duration-200 resize-none"
+        className="px-4 py-3 border-2 border-black bg-black text-white placeholder-gray-500 focus:border-red-500 transition-colors duration-200 resize-none"
       ></textarea>
 
       <button
@@ -162,7 +163,7 @@ const InputField = ({
       value={value}
       onChange={onChange}
       required={required}
-      className="px-4 py-3 border-2 border-black bg-black text-white placeholder-gray-500 rounded-lg focus:border-purple-500 transition-colors duration-200"
+      className="px-4 py-3 border-2 border-black bg-black text-white placeholder-gray-500 focus:border-purple-500 transition-colors duration-200"
     />
   );
 };
@@ -218,15 +219,37 @@ const ContactInfo = ({ icon, text }: { icon: "mail" | "location"; text: string }
 };
 
 const ContactImage = () => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const handleMouseEnter = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  };
+
   return (
-      <Image
-        src="/prop-5.gif"
-        alt="Retro arcade joystick"
-        width={500}
-        height={500}
-        className="object-contain rounded-lg"
-        priority
-        unoptimized
-      />
+    <div
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+    className="relative"
+  >
+    <Image
+      src="/prop-5.gif"
+      alt="Retro arcade joystick"
+      width={500}
+      height={500}
+      className="object-contain rounded-lg"
+      priority
+      unoptimized
+    />
+    <audio ref={audioRef} src="/dhoom.mp3" />
+  </div>
   );
 };

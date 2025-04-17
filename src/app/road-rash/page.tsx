@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { pressStart } from '@/app/fonts';
 
 export default function RoadRash() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,10 +17,10 @@ export default function RoadRash() {
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
     
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black mb-8 
+        <h1 className={`text-3xl sm:text-4xl md:text-5xl ${pressStart.className} font-black mb-8 
           bg-clip-text text-transparent bg-gradient-to-r 
           from-green-600 via-green-300 to-green-800 
-          drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
+          drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]`}>
           ROAD RASH
         </h1>
 
@@ -56,7 +57,7 @@ export default function RoadRash() {
         <Link
           href="/"
           className="mt-10 px-8 py-4 text-xl font-bold uppercase 
-          bg-green-700 text-white rounded-lg shadow-[4px_4px_0px_rgba(0,0,0,0.5)] 
+          bg-green-700 text-white shadow-[4px_4px_0px_rgba(0,0,0,0.5)] 
           hover:shadow-[6px_6px_0px_rgba(0,0,0,0.7)] 
           transition-all duration-200 active:translate-x-[2px] active:translate-y-[2px]"
         >

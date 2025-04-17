@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { pressStart } from '@/app/fonts';
 
 export default function Tekken3() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,10 +17,10 @@ export default function Tekken3() {
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-4">
         
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black mb-8 
+        <h1 className={`text-3xl ${pressStart.className} sm:text-4xl md:text-5xl font-black mb-8 
           bg-clip-text text-transparent bg-gradient-to-r 
           from-red-400 via-orange-500 to-yellow-300 
-          drop-shadow-[0_2px_4px_rgba(255,0,0,0.3)]">
+          drop-shadow-[0_2px_4px_rgba(255,0,0,0.3)]`}>
           TEKKEN 3
         </h1>
 
@@ -59,8 +60,8 @@ export default function Tekken3() {
         <Link
           href="/"
           className="mt-10 px-8 py-4 text-xl font-bold uppercase 
-          bg-red-700 text-white rounded-lg shadow-[4px_4px_0px_rgba(255,0,0,0.5)] 
-          hover:shadow-[6px_6px_0px_rgba(255,0,0,0.7)] 
+          bg-red-700 text-white shadow-[4px_4px_0px_rgba(0,0,0,0.3)] 
+          hover:shadow-[6px_6px_0px_rgba(0,0,0,0.7)] 
           transition-all duration-200 active:translate-x-[2px] active:translate-y-[2px]"
         >
           Return to Lobby
