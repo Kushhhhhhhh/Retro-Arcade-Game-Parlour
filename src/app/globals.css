@@ -45,3 +45,41 @@ html {
     color-scheme: dark;
   }
 }
+
+/* CRT Scanlines */
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+/* CRT Static Glitch */
+@keyframes glitch {
+  0% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+  20% { clip-path: inset(5% 5% 5% 5%); transform: translateX(0); }
+  25% { clip-path: inset(20% 10% 20% 10%); transform: translateX(-2px); }
+  30% { clip-path: inset(20% 10% 20% 10%); transform: translateX(2px); }
+  35% { clip-path: inset(20% 10% 20% 10%); transform: translateX(-2px); }
+  40% { clip-path: inset(20% 10% 20% 10%); transform: translateX(2px); }
+  45% { clip-path: inset(20% 10% 20% 10%); transform: translateX(-2px); }
+  50% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+  100% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+}
+
+/* Interactive Glitch Hover */
+@keyframes glitchHover {
+  0% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+  25% { clip-path: inset(5% 5% 5% 5%); transform: translateX(-1px); }
+  50% { clip-path: inset(10% 10% 10% 10%); transform: translateX(1px); }
+  75% { clip-path: inset(5% 5% 5% 5%); transform: translateX(-1px); }
+  100% { clip-path: inset(0 0 0 0); transform: translateX(0); }
+}
+
+/* Blinking Cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}

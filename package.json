@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/press-start-2p": "^5.2.5",
+    "framer-motion": "^12.19.2",
     "next": "15.2.4",
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",

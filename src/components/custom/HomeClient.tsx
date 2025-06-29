@@ -109,8 +109,8 @@ export default function HomeClient() {
           </p>
 
           <button
-            className="group relative self-start px-8 py-4 border-[4px] border-[#FFFF00] bg-[#120F1E] 
-                    font-press-start text-[#FFFF00] text-sm md:text-base uppercase tracking-widest
+            className="group relative self-start px-8 py-4 border-[4px] border-[#FFFF] bg-indigo-950 
+                    font-press-start text-white text-sm md:text-base uppercase tracking-widest
                     shadow-[8px_8px_0_#000] hover:shadow-[12px_12px_0_#000]
                     transform transition-all duration-200 hover:-translate-x-1 hover:-translate-y-1"
             onClick={() => {
@@ -126,7 +126,7 @@ export default function HomeClient() {
             <span className="absolute inset-0 w-full h-full bg-[#FFFF00]/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
           </button>
 
-          <div className="text-sm text-[#AAAAAA] font-vt323 mt-6 p-4 border-l-4 border-[#FF00FF] bg-[#1A1730]">
+          <div className="hidden md:block text-sm text-[#AAAAAA] font-vt323 mt-6 p-4 border-l-4 border-[#FF00FF] bg-[#1A1730]">
             <p>Tip: Use the Konami Code to unlock a secret game!</p>
             <div className="flex flex-wrap gap-2 mt-2">
               {KONAMI_CODE.map((key, i) => (
@@ -174,8 +174,6 @@ export default function HomeClient() {
           <span className="relative z-[1]">
             Select Your Game
           </span>
-          <span className="absolute -bottom-3 left-0 h-[6px] w-full bg-[#FF00FF]"></span>
-          <span className="absolute -bottom-3 left-[4px] h-[6px] w-full bg-[#00FFFF]/70"></span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
