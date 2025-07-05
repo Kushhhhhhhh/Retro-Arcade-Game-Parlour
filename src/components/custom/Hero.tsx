@@ -19,7 +19,7 @@ export default function Hero() {
   const welcomeText = "WELCOME TO THE\nARCADE PARADISE";
 
   return (
-    <section className="relative h-[50vh] md:h-[90vh] text-white flex items-center justify-center">
+    <section className="relative h-[60vh] md:h-[90vh] text-white flex items-center justify-center">
       {/* Background Glows */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-500 rounded-full mix-blend-screen blur-xl opacity-20"></div>
@@ -109,11 +109,11 @@ export default function Hero() {
 
           {/* Control Panel Buttons */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
-            <div className="w-8 h-8 rounded-full" style={{
+            <div className="w-4 md:w-8 h-4 md:h-8 rounded-full" style={{
               backgroundColor: '#ef4444',
               boxShadow: '0 0 8px #ef4444, 0 0 16px #ef4444',
             }}></div>
-            <div className="w-8 h-8 rounded-full" style={{
+            <div className="w-4 md:w-8 h-4 md:h-8 rounded-full" style={{
               backgroundColor: '#22c55e',
               boxShadow: '0 0 8px #22c55e, 0 0 16px #22c55e',
             }}></div>
@@ -123,7 +123,7 @@ export default function Hero() {
 
       {/* Infinite Marquee */}
       <motion.div
-        className="absolute bottom-8 left-0 right-0 whitespace-nowrap"
+        className="absolute bottom-8 left-0 right-0 whitespace-nowrap overflow-hidden"
       >
         <motion.div
           className="inline-block"
@@ -137,10 +137,10 @@ export default function Hero() {
           }}
         >
           <span className={`${pressStart.className} text-pink-400 text-base sm:text-lg md:text-xl lg:text-3xl`}>
-            {" • INSERT COIN TO START • POWER UP FOR EXTRA LIVES • HIGH SCORES LOADED • JABBA THE HUTT APPROVES THIS GAME • CAUTION: MAY CAUSE ADDICTION • PRESS START TO ENTER THE PARADISE • NO CONTINUOUS PLAY WITHOUT COINS • BUILT WITH PIXEL LOVE • GET READY TO LEVEL UP • DO NOT FEED AFTER MIDNIGHT • DANGER: RETRO OVERLOAD • YOU HAVE 3 LIVES • BEWARE OF GLITCHY DRAGONS • POWERED BY NOSTALGIA • TILT DETECTED • GAME ON, GAMER • UNTIL WARRIORS NEED COINS • EAT SLEEP GAME REPEAT • ARCADE MODE ACTIVATED • WARNING: FLASHING LIGHTS •"}
+            {" • INSERT COIN TO START • POWER UP FOR EXTRA LIVES • HIGH SCORES LOADED • JABBA THE HUTT APPROVES THIS GAME • CAUTION: MAY CAUSE ADDICTION • PRESS START TO ENTER THE PARADISE • NO CONTINUOUS PLAY WITHOUT COINS • BUILT WITH PIXEL LOVE • GET READY TO LEVEL UP • DO NOT FEED AFTER MIDNIGHT • DANGER: RETRO OVERLOAD • YOU HAVE 3 LIVES • BEWARE OF GLITCHY DRAGONS • POWERED BY NOSTALGIA • TILT DETECTED • GAME ON, GAMER • UNTIL WARRIORS NEED COINS • EAT SLEEP GAME REPEAT • ARCADE MODE ACTIVATED • WARNING: FLASHING LIGHTS"}
           </span>
           <span className={`${pressStart.className} text-pink-400 text-base sm:text-lg md:text-xl lg:text-3xl`}>
-            {" • INSERT COIN TO START • POWER UP FOR EXTRA LIVES • HIGH SCORES LOADED • JABBA THE HUTT APPROVES THIS GAME • CAUTION: MAY CAUSE ADDICTION • PRESS START TO ENTER THE PARADISE • NO CONTINUOUS PLAY WITHOUT COINS • BUILT WITH PIXEL LOVE • GET READY TO LEVEL UP • DO NOT FEED AFTER MIDNIGHT • DANGER: RETRO OVERLOAD • YOU HAVE 3 LIVES • BEWARE OF GLITCHY DRAGONS • POWERED BY NOSTALGIA • TILT DETECTED • GAME ON, GAMER • UNTIL WARRIORS NEED COINS • EAT SLEEP GAME REPEAT • ARCADE MODE ACTIVATED • WARNING: FLASHING LIGHTS •"}
+            {" • INSERT COIN TO START • POWER UP FOR EXTRA LIVES • HIGH SCORES LOADED • JABBA THE HUTT APPROVES THIS GAME • CAUTION: MAY CAUSE ADDICTION • PRESS START TO ENTER THE PARADISE • NO CONTINUOUS PLAY WITHOUT COINS • BUILT WITH PIXEL LOVE • GET READY TO LEVEL UP • DO NOT FEED AFTER MIDNIGHT • DANGER: RETRO OVERLOAD • YOU HAVE 3 LIVES • BEWARE OF GLITCHY DRAGONS • POWERED BY NOSTALGIA • TILT DETECTED • GAME ON, GAMER • UNTIL WARRIORS NEED COINS • EAT SLEEP GAME REPEAT • ARCADE MODE ACTIVATED • WARNING: FLASHING LIGHTS"}
           </span>
         </motion.div>
       </motion.div>
@@ -176,9 +176,9 @@ export default function Hero() {
 
       {/* CRT Glow Effect */}
       <div
-        className="absolute inset-0 pointer-events-none z-20 opacity-20"
+        className="absolute inset-0 pointer-events-none z-20 opacity-30"
         style={{
-          backgroundImage: `linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.1) 50%)`,
+          backgroundImage: `linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.1) 60%)`,
           backgroundSize: '100% 4px',
         }}
       />

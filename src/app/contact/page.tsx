@@ -6,7 +6,7 @@ import { pressStart } from '@/app/fonts';
 
 export default function Contact() {
   return (
-    <main className="min-h-screen text-white overflow-x-hidden mt-10 px-4 sm:px-20 py-10 flex flex-col items-center gap-12">
+    <main className="min-h-screen text-white overflow-x-hidden mt-10 px-4 sm:px-20 py-10 flex flex-col justify-center items-center gap-12">
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
         <ContactInfoSection />
         <ContactForm />
@@ -18,7 +18,7 @@ export default function Contact() {
 function ContactInfoSection() {
   return (
     <div className="flex flex-col justify-center space-y-6">
-      <h1 className={`text-3xl sm:text-4xl md:text-5xl ${pressStart.className} font-bold bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent`}>
+      <h1 className={`text-3xl sm:text-4xl md:text-5xl ${pressStart.className} font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent`}>
         Get in Touch
       </h1>
       <p className="text-lg sm:text-xl text-gray-400 font-medium">
@@ -94,9 +94,9 @@ function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-6 max-h-120 p-6 border-4 border-white shadow-[8px_8px_0_rgba(255,255,255,1)] bg-gray-900"
+      className="flex flex-col gap-6 max-h-120 p-6 border-4 border-white shadow-[8px_8px_0_rgba(255,255,255,1)] bg-[#0f0f0f]"
     >
-      <h2 className={`text-2xl sm:text-3xl font-bold ${pressStart.className} uppercase tracking-wider bg-gradient-to-r from-purple-700 via-pink-500 to-red-600 bg-clip-text text-transparent`}>
+      <h2 className={`text-2xl sm:text-3xl font-bold ${pressStart.className} uppercase tracking-wider bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent`}>
         Send Us a Message
       </h2>
 

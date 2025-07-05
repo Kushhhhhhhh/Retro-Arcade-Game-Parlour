@@ -82,15 +82,15 @@ export default function Header() {
 
       <div
         className={`fixed top-0 right-0 h-full w-full sm:w-3/4 md:w-1/2 lg:w-1/3
-                  bg-[#120F1E] z-50 transform transition-transform duration-300 ease-in-out
+                  bg-[#0f0f0f] z-50 transform transition-transform duration-300 ease-in-out
                   ${isSidebarOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex flex-col h-full p-6 sm:p-8">
           <div className="flex justify-end mb-8">
             <button
               onClick={() => setIsSidebarOpen(false)}
-              className="text-2xl sm:text-3xl text-[#FFFF00] hover:text-[#00FFFF]
-                       border-2 border-[#FF00FF] p-2 hover:border-[#00FFFF]
+              className="text-2xl sm:text-3xl text-indigo-200 hover:text-[#00FFFF]
+                       border-2 border-indigo-400 p-2 hover:border-[#00FFFF]
                        rounded-md shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000]
                        transition-all duration-200 transform hover:translate-y-[-2px]"
               aria-label="Close menu"
@@ -104,7 +104,7 @@ export default function Header() {
               href="/about"
               onClick={() => setIsSidebarOpen(false)}
               className="uppercase tracking-wider px-4 py-3 text-center
-                       bg-[#FF00FF] text-[#120F1E] hover:bg-[#00FFFF]
+                       bg-indigo-400 text-[#120F1E] hover:bg-indigo-500
                        border-2 border-white rounded-md
                        transition-all duration-200 shadow-[4px_4px_0px_#000]
                        hover:shadow-[6px_6px_0px_#000]
@@ -116,7 +116,7 @@ export default function Header() {
               href="/contact"
               onClick={() => setIsSidebarOpen(false)}
               className="uppercase tracking-wider px-4 py-3 text-center
-                       bg-[#FFFF00] text-[#120F1E] hover:bg-[#00FFFF]
+                       bg-lime-400 text-[#120F1E] hover:bg-lime-500
                        border-2 border-white rounded-md
                        transition-all duration-200 shadow-[4px_4px_0px_#000]
                        hover:shadow-[6px_6px_0px_#000]

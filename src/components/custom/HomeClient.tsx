@@ -68,7 +68,7 @@ export default function HomeClient() {
   return (
     <main
       ref={containerRef}
-      className={`min-h-screen text-white overflow-x-hidden px-4 sm:px-10 py-10 flex flex-col items-center gap-12 relative ${glitchActive ? 'translate-x-[2px]' : ''
+      className={`min-h-screen text-white overflow-x-hidden px-4 sm:px-10 py-20 flex flex-col items-center gap-12 relative ${glitchActive ? 'translate-x-[2px]' : ''
         }`}
     >
 
@@ -162,9 +162,6 @@ export default function HomeClient() {
               priority
               unoptimized
             />
-
-            <div className={`absolute inset-0 bg-[#00FFFF]/10 mix-blend-color pointer-events-none z-[2] ${glitchActive ? 'opacity-20' : 'opacity-0'
-              } transition-opacity`}></div>
           </div>
         </div>
       </div>
@@ -205,19 +202,13 @@ export default function HomeClient() {
 
       {showEasterEgg && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95">
-          <div className="absolute inset-0 pointer-events-none opacity-10"
-            style={{
-              backgroundSize: '100% 2px',
-              backgroundImage: `repeating-linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px, transparent 1px, transparent 2px)`
-            }}></div>
-
-          <div className="relative text-center p-4 max-w-[90vw] md:max-w-[720px]">
-            <div className="relative p-6 bg-[#1A1730] border-2 border-[#68ff5b] shadow-[0_0_20px_rgba(255,0,255,0.3)]">
-              <h2 className="font-press-start text-2xl sm:text-3xl font-bold text-[#00ff55] mb-6">
+          <div className="relative text-center p-4 w-120 h-auto">
+            <div className="relative p-6 bg-[#ofofof] border-2 border-[#68ff5b]">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#00ff55] mb-6">
                 SECRET UNLOCKED!
               </h2>
 
-              <p className="font-vt323 text-xl sm:text-2xl text-white mb-6">
+              <p className="text-xl sm:text-2xl text-white mb-6">
                 Here&apos;s a bonus game for you:
               </p>
 
@@ -228,21 +219,19 @@ export default function HomeClient() {
                   height="480"
                   className="w-full max-w-[640px] h-[300px] sm:h-[480px]"
                   allowFullScreen
-                  loading="lazy"
                 ></iframe>
               </div>
 
               <button
                 onClick={() => setShowEasterEgg(false)}
-                className="group relative px-8 py-4 border-[4px] border-[#FF00FF] bg-[#120F1E] 
-                         font-press-start text-[#FF00FF] text-base uppercase tracking-widest
+                className="group relative px-8 py-4 border-[4px] border-indigo-300 bg-[#0f0f0f] 
+                      text-indigo-300 text-base uppercase
                          shadow-[8px_8px_0_rgba(0,0,0,1)] 
                          hover:shadow-[12px_12px_0_rgba(0,0,0,1)]
                          transform transition-all duration-200 
                          hover:-translate-x-1 hover:-translate-y-1"
               >
                 <span>Close</span>
-                <span className="absolute inset-0 w-full h-full bg-[#FF00FF]/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
               </button>
             </div>
           </div>
